@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ATV3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number]:hover::-webkit-inner-spin-button,
+    input[type=number]:hover::-webkit-outer-spin-button,
+    input[type=number]:focus::-webkit-inner-spin-button,
+    input[type=number]:focus::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
+    .bandeiraCartao {
+      display: none;
+      width: 25px;
+    }
+
+    #responsiveContainer {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Atividade 3</h1>
+
+  <div id="responsiveContainer">
+
+    <div>
+      <form>
+        <label for="valor">Valor:</label>
+        <input type="number" id="valor" />
+        <br>
+
+        <input type="radio" id="tipoPix" name="pagamento" />
+        <label for="tipoPix">Pix</label>
+
+        <input type="radio" id="tipoCartao" name="pagamento" />
+        <label for="tipoCartao">Cartão</label>
+        <br>
+
+        <button type="button" id="btnInformar">Informar dados</button>
+      </form>
+    </div>
+
+    <br>
+
+    <!-- Pix Container -->
+    <div id="pixContainer" style="border: 1px solid black; padding: 10px; display: none">
+      <form id="dadosPix">
+        <label for="chavePix">CPF:</label>
+        <input type="text" id="chavePix" />
+        <br>
+      </form>
+    </div>
+
+    <!-- Cartao Container -->
+    <div id="cartaoContainer" style="border: 1px solid black; padding: 10px; display: none">
+      <form id="dadosCartao">
+        <label for="numCartao">Número:</label>
+        <input type="number" id="numCartao" />
+        <img src="https://img.icons8.com/?size=100&id=13608&format=png&color=000000" id="cartaoVisa"
+          class="bandeiraCartao" alt="Cartao Visa" />
+
+        <img src="https://img.icons8.com/?size=100&id=Sq0VNi1Afgmj&format=png&color=000000" id="cartaoMaster"
+          class="bandeiraCartao" alt="Cartao Master" />
+        <br>
+        <label type="text" id="cartaoInvalidoLbl"">Número de cartão inválido.<br />
+      </label>
+
+      <label for=" titularCartao">Titular:</label>
+        <input type="text" id="titularCartao" />
+        <br>
+
+        <label for="codigoSeguranca">Cód. Segurança:</label>
+        <input type="text" id="codigoSeguranca" />
+        <br>
+
+        <label for="vencimentoCartao">Vencimento:</label>
+        <input type="month" id="vencimentoCartao" />
+        <br>
+
+        <label for="parcelasCartao">Parcelas:</label>
+        <select id="parcelasCartao">
+          <option value="1">1x R$ 0,00</option>
+          <option value="2">2x R$ 0,00</option>
+          <option value="3">3x R$ 0,00</option>
+          <option value="4">4x R$ 0,00</option>
+          <option value="5">5x R$ 0,00</option>
+        </select>
+        <br>
+      </form>
+    </div>
+
+    <br>
+
+    <div>
+      <label id="total" style="float: right">Total: R$ 0,00</label>
+      <br>
+      <button type="submit" id="btnPagar">Pagar</button>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
